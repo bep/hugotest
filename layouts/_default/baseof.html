@@ -27,7 +27,7 @@
 				{{block "main" .}}This is the main content.{{end}}
 			</div>
 			<div class="box">
-				{{ partial "sections-tree.html" . }}
+				{{ partialCached "sections-tree.html" . }}
 			</div>
 			<div class="box">
 				{{ if .IsNode }}
