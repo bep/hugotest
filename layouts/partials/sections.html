@@ -1,5 +1,18 @@
-<ol class = "breadcrumb">
-   <li><a href = "#">Home</a></li>
-   <li><a href = "#">2013</a></li>
-   <li class = "active">November</li>
+{{ $sect := (.Site.GetPage "section" "second") }}
+
+<ul class = "nav navbar-nav">
+<li><a href = "#">{{ $sect.Title }}</a></li>
+{{ range $sect.Sections }}
+
+
+<li><a href = "{{ .RelPermalink }}">{{ .Title }}</a></li>
+{{ template "section-nav"  . }}
+
 </ol>
+{{ end }}
+{{ define "section-nav" }}
+{{ range .Sections }}
+<li><a href = "{{ .RelPermalink }}">{{ .Title }}</a></li>
+{{ template "section-nav"  . }}
+{{ end }}
+{{ end }}
