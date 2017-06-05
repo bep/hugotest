@@ -8,13 +8,13 @@
 {{ define "section-tree-nav" }}
 {{ range .Sections}}
 <ul>
-<li><input type="checkbox" id="item-0-0" /><label for="item-0-0">{{ .Title }}</label>
-<ul>
-{{ range .Pages }}
- <li><a href="{{ .RelPermalink}}">{{ .Title }}</a></li>
-{{ end }}
-{{ template "section-tree-nav" . }}
-</ul>
+	<li><input type="checkbox" id="item-0-0" /><label for="item-0-0">{{ .Title }}</label>
+	<ul>
+		{{ range .Pages }}
+		<li><a href="{{ .RelPermalink}}">{{ .Title }}</a></li>
+		{{ end }}
+		{{ template "section-tree-nav" . }}
+	</ul>
 </li>
 </ul>
 {{ end }}
