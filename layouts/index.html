@@ -2,7 +2,7 @@
 <h1>{{ .Title }}</h1>
 <div class="list-group">
 {{ range (.Paginate (where .Site.RegularPages "Section" "in" ( .Site.Params.mainSections ))).Pages }}
-<a href="#" class="list-group-item">{{ .Title }}</a>
+<a href="{{ .RelPermalink }}" class="list-group-item">{{ .Title }}</a>
 {{ end }}
 </div>
 {{ .Content }}

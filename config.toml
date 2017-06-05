@@ -1,4 +1,4 @@
-baseURL = "http://example.org/"
+baseURL = "hugotest.bep.is/"
 languageCode = "en-us"
 title = "Hugo Test Site"
 paginate = 2
