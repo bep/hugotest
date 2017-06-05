@@ -9,6 +9,5 @@ See https://github.com/spf13/hugo/pull/3309
 
 Notes about the "breadcrump" navigation above:
 
-* We need a way to set "active section"
 * In the above I just pick a top level section. You may also do **.Site.Home.Sections** to get them all.
 * Paginators in sub-sections: http://localhost:1313/second/subfirst/subsub/

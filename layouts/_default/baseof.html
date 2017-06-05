@@ -5,28 +5,39 @@
 		<title>Hugo Test Site</title>
 		<meta name="description" content="Hugo Test Site">
 		<meta name="author" content="bep">
-			<link rel="stylesheet" href="{{ "bootstrap.min.css" | relURL }}">
+		<link rel="stylesheet" href="{{ "bootstrap.min.css" | relURL }}">
 		<link rel="stylesheet" href="{{ "styles.css" | relURL }}">
-
 	</head>
 	<body>
 		<div class="container">
-		 <div class="navbar navbar-default navbar-fixed-top">
-			<div class="container">
-			<div class="navbar-header">
-          <a href="{{ .Site.Home.RelPermalink }}" class="navbar-brand">Hugo Test</a>
-          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-        </div>
-			 <div class="navbar-collapse collapse" id="navbar-main">{{ partial "sections.html" . }}</div>
+			<div class="navbar navbar-default navbar-fixed-top">
+				<div class="container">
+					<div class="navbar-header">
+						<a href="{{ .Site.Home.RelPermalink }}" class="navbar-brand">Hugo Test</a>
+						<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						</button>
+					</div>
+					<div class="navbar-collapse collapse" id="navbar-main">{{ partial "sections.html" . }}</div>
+				</div>
 			</div>
+			<div class="box">
+				{{block "main" .}}This is the main content.{{end}}
 			</div>
-			{{block "main" .}}This is the main content.{{end}}
-			{{ if .IsNode }}
-			{{ template "_internal/pagination.html" . }}
+			<div class="box">
+				{{ if .IsNode }}
+				{{ template "_internal/pagination.html" . }}
+				{{ else }}
+				<a class="btn btn-lg btn-default{{if not .PrevInSection}} disabled{{end}}" href="{{if .PrevInSection}}{{.PrevInSection.Permalink}}{{end}}"> Older</a>
+				<a class="btn btn-lg btn-primary{{if not .NextInSection}} disabled{{end}}" href="{{if .NextInSection}}{{.NextInSection.Permalink}}{{end}}">Newer</a>
+				{{ end }}
+			</div>
+			{{ with .Parent }}
+			<div class="box">
+				<a class="btn btn-lg btn-info" href="{{ .RelPermalink }}">Up One Level</a>
+			</div>
 			{{ end }}
 		</div>
 	</body>
