@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Hugo Test Site</title>
+		<meta name="description" content="Hugo Test Site">
+		<meta name="author" content="bep">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/solar/bootstrap.min.css">
+	</head>
+	<body>
+		<div class="container">
+			{{ partial "sections.html" . }}
+			{{block "main" .}}This is the main content.{{end}}
+		</div>
+	</body>
+</html>
