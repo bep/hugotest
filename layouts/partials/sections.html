@@ -1,18 +1,17 @@
 {{ $sect := (.Site.GetPage "section" "second") }}
+{{ $home := .Site.Home }}
 
-<ul class = "nav navbar-nav">
-<li><a href = "#">{{ $sect.Title }}</a></li>
+<ol class = "nav navbar-nav">
+<li{{ if .IsActive $home }} class="active" {{ end }}><a href = "{{ $home.RelPermalink }}">Home</a></li>
+<li{{ if .IsActive $sect }} class="active" {{ end }}><a href = "{{ $sect.RelPermalink }}">{{ $sect.Title }}</a></li>
 {{ range $sect.Sections }}
-
-
-<li><a href = "{{ .RelPermalink }}">{{ .Title }}</a></li>
-{{ template "section-nav"  . }}
-
+<li{{ if .IsActive $ }} class="active" {{ end }}><a href = "{{ .RelPermalink }}">{{ .Title }}</a></li>
+{{ template "section-nav"  (dict "sections" .Sections "current" $ ) }}
 </ol>
 {{ end }}
 {{ define "section-nav" }}
-{{ range .Sections }}
-<li><a href = "{{ .RelPermalink }}">{{ .Title }}</a></li>
-{{ template "section-nav"  . }}
+{{ range .sections }}
+<li{{ if .IsActive $.current }} class="active" {{ end }}><a href = "{{ .RelPermalink }}">{{ .Title }}</a></li>
+{{ template "section-nav"  (dict "sections" .Sections "current" $.current ) }}
 {{ end }}
 {{ end }}
