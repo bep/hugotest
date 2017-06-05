@@ -1,0 +1,22 @@
+{{ $sect := (.Site.GetPage "section" "second") }}
+{{ $home := .Site.Home }}
+<div class="css-treeview">
+	<ul>
+		<li><input type="checkbox" id="item-0" checked="checked" /><label for="item-0">Home</label>
+		{{ template "section-tree-nav" $home }}
+	</ul>
+</div>
+{{ define "section-tree-nav" }}
+{{ range .Sections}}
+<ul>
+<li><input type="checkbox" id="item-0-0" /><label for="item-0-0">{{ .Title }}</label>
+<ul>
+{{ range .Pages }}
+ <li><a href="{{ .RelPermalink}}">{{ .Title }}</a></li>
+{{ end }}
+{{ template "section-tree-nav" . }}
+</ul>
+</li>
+</ul>
+{{ end }}
+{{ end }}

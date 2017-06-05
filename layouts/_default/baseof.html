@@ -20,11 +20,14 @@
 						<span class="icon-bar"></span>
 						</button>
 					</div>
-					<div class="navbar-collapse collapse" id="navbar-main">{{ partial "sections.html" . }}</div>
+					<div class="navbar-collapse collapse" id="navbar-main">{{ partial "sections-nav.html" . }}</div>
 				</div>
 			</div>
 			<div class="box">
 				{{block "main" .}}This is the main content.{{end}}
+			</div>
+			<div class="box">
+				{{ partial "sections-tree.html" . }}
 			</div>
 			<div class="box">
 				{{ if .IsNode }}

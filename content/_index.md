@@ -5,9 +5,11 @@ title = "Hugo Test Site"
 +++
 
 
-See https://github.com/spf13/hugo/pull/3309
+* Source: https://github.com/bep/hugotest
+* See https://github.com/spf13/hugo/pull/3309
 
 Notes about the "breadcrump" navigation above:
 
 * In the above I just pick a top level section. You may also do **.Site.Home.Sections** to get them all.
-* Paginators in sub-sections: http://localhost:1313/second/subfirst/subsub/
+* Paginators in sub-sections: http://hugotest.bep.is/second/subfirst/subsub/
+* The "active" does not work in paginated pages, will fix.
