@@ -1,6 +1,6 @@
 {{ $sect := (.Site.GetPage "section" "section1") }}
 {{ $home := .Site.Home }}
-
+{{ if $sect }}
 <ol class = "nav navbar-nav">
 <li{{ if .InSection $home }} class="active" {{ end }}><a href = "{{ $home.RelPermalink }}">Home</a></li>
 <li{{ if .InSection $sect }} class="active" {{ end }}><a href = "{{ $sect.RelPermalink }}">{{ $sect.Title }}</a></li>
@@ -8,6 +8,7 @@
 <li{{ if .InSection $ }} class="active" {{ end }}><a href = "{{ .RelPermalink }}">{{ .Title }}</a></li>
 {{ template "section-nav"  (dict "sections" .Sections "current" $ ) }}
 </ol>
+{{ end }}
 {{ end }}
 {{ define "section-nav" }}
 {{ range .sections }}

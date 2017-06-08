@@ -5,10 +5,11 @@ title = "Hugo Test Site"
 +++
 
 
-* Source: https://github.com/bep/hugotest
-* See https://github.com/spf13/hugo/pull/3309
+* Source for this test site: https://github.com/bep/hugotest
+* For the Hugo implementation, see this PR: https://github.com/spf13/hugo/pull/3309
 
-Notes about the "breadcrump" navigation above:
+Notes about the "breadcrump" navigation above I just picked one random root section, you may also do **.Site.Home.Sections** to get them all.
 
-* In the above I just pick a top level section. You may also do **.Site.Home.Sections** to get them all.
-* Paginators in sub-sections: http://hugotest.bep.is/second/subfirst/subsub/
+### Content Directory
+
+{{< tree >}}

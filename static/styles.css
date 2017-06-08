@@ -50,7 +50,7 @@ footer p { clear: left; margin-bottom: 0 }
 	.splash h1 { font-size: 2em }
 	#banner { margin-bottom: 2em; text-align: center }
 }
-.box { padding-bottom: 30px; }
+.box { margin-bottom: 30px; }
 
 /*
  * CSS3 Treeview. No JavaScript

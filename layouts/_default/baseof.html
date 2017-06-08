@@ -26,9 +26,8 @@
 			<div class="box">
 				{{block "main" .}}This is the main content.{{end}}
 			</div>
-			<div class="box">
-				{{ partialCached "sections-tree.html" . }}
-			</div>
+			<h3>Section Tree</h3>
+			{{ partial "sections-tree.html" . }}
 			<div class="box">
 				{{ if .IsNode }}
 				{{ template "_internal/pagination.html" . }}

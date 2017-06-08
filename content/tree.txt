@@ -1,0 +1,27 @@
+content
+├── _index.md
+├── section1
+│   └── s1_1
+│       ├── _index.md
+│       ├── hugo-rocks.md
+│       ├── s_1_2a
+│       │   ├── _index.md
+│       │   ├── a.md
+│       │   ├── b.md
+│       │   └── c.md
+│       └── s_1_2b
+│           ├── _index.md
+│           ├── a.md
+│           ├── b.md
+│           └── c.md
+├── section2
+│   ├── _index.md
+│   └── a
+│       └── b
+│           └── c
+│               └── d
+│                   ├── _index.md
+│                   └── hugo-rocks.md
+└── tree.txt
+
+9 directories, 15 files

@@ -1,5 +1,5 @@
 {{ $home := .Site.Home }}
-<div class="css-treeview">
+<div class="css-treeview box">
 	<ul>
 		<li><input type="checkbox" id="item-0" checked="checked" /><label for="item-0">Home</label>
 		<ul>
@@ -8,7 +8,7 @@
 	</ul>
 </div>
 {{ define "section-tree-nav" }}
-{{ range .Sections}}
+{{ range .Sections.Reverse}}
 <li>
 	<li><input type="checkbox" id="item-0-0" checked="checked"/><label for="item-0-0">{{ .Title }}</label>
 	<ul>
