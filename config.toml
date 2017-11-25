@@ -6,3 +6,6 @@ pygmentscodefences = "true"
 pygmentscodefencesguesssyntax = false
 pygmentsstyle = "trac"
 pygmentsuseclasses = false
+
+[permalinks]
+  bundles = "/:year/:month/:slug/"
