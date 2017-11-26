@@ -8,4 +8,4 @@ pygmentsstyle = "trac"
 pygmentsuseclasses = false
 
 [permalinks]
-  bundles = "/:year/:month/:slug/"
+  section3 = "/:sections/:year/:month/:slug/"

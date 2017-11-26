@@ -1,6 +1,6 @@
 +++
 date = "2017-11-23"
-title = "Bundle 1"
+title = "My Article 1"
 
 +++
 
