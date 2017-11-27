@@ -12,8 +12,8 @@
 <h2>Images:</h2>
 {{ with .Resources.ByType "image" }}
 {{ range . }}
-<h3>.Fill "180x200 right" => </h3>
-{{ $scaled := .Fill "180x200 right" }}
+<h3>.Fill "180x200 bottomLeft" => </h3>
+{{ $scaled := .Fill "180x60  bottomLeft" }}
 <p>Width: {{ $scaled.Width }} Height: {{ $scaled.Height }} {{ $scaled.RelPermalink }}</p>
 <img src="{{ $scaled.Permalink }}">
 
