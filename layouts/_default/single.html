@@ -12,8 +12,26 @@
 <h2>Images:</h2>
 {{ with .Resources.ByType "image" }}
 {{ range . }}
-<h3>Wdith: {{ .Width }} Height: {{ .Height }}</h3>
-<img src="{{ .Permalink }}">
+<h3>.Fill "180x200 right" => </h3>
+{{ $scaled := .Fill "180x200 right" }}
+<p>Width: {{ $scaled.Width }} Height: {{ $scaled.Height }} {{ $scaled.RelPermalink }}</p>
+<img src="{{ $scaled.Permalink }}">
+
+<h3>.Fit "210x210" => </h3>
+{{ $scaled := .Fit "210x210" }}
+<p>Width: {{ $scaled.Width }} Height: {{ $scaled.Height }} {{ $scaled.RelPermalink }}</p>
+<img src="{{ $scaled.Permalink }}">
+
+<h3>.Resize "400x" => </h3>
+{{ $scaled := .Resize "400x" }}
+<p>Width: {{ $scaled.Width }} Height: {{ $scaled.Height }} {{ $scaled.RelPermalink }}</p>
+<img src="{{ $scaled.Permalink }}">
+
+<h3>.Resize "400x100" => </h3>
+{{ $scaled := .Resize "400x100" }}
+<p>Width: {{ $scaled.Width }} Height: {{ $scaled.Height }} {{ $scaled.RelPermalink }}</p>
+<img src="{{ $scaled.Permalink }}">
+
 {{ end }}
 {{ end }}
 
