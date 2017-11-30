@@ -22,6 +22,11 @@
 <p>Width: {{ $scaled.Width }} Height: {{ $scaled.Height }} {{ $scaled.RelPermalink }}</p>
 <img src="{{ $scaled.Permalink }}">
 
+<h3>.Fit "210x210" => </h3>
+{{ $scaled := .Fit "210x210" }}
+<p>Width: {{ $scaled.Width }} Height: {{ $scaled.Height }} {{ $scaled.RelPermalink }}</p>
+<img src="{{ $scaled.Permalink }}">
+
 <h3>.Resize "400x" => </h3>
 {{ $scaled := .Resize "400x" }}
 <p>Width: {{ $scaled.Width }} Height: {{ $scaled.Height }} {{ $scaled.RelPermalink }}</p>
