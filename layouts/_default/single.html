@@ -32,8 +32,14 @@
 <p>Width: {{ $scaled.Width }} Height: {{ $scaled.Height }} {{ $scaled.RelPermalink }}</p>
 <img src="{{ $scaled.Permalink }}">
 
-<h3>.Resize "400x" => </h3>
-{{ $scaled := .Resize "400x" }}
+<h3>.Resize "400x 10 q10" (very low JPEG quality, default=75)=> </h3>
+{{ $scaled := .Resize "400x q10" }}
+<p>Width: {{ $scaled.Width }} Height: {{ $scaled.Height }} {{ $scaled.RelPermalink }}</p>
+<img src="{{ $scaled.Permalink }}">
+
+
+<h3>.Resize "400x q100" (very high JPEG quality)=> </h3>
+{{ $scaled := .Resize "400x q100" }}
 <p>Width: {{ $scaled.Width }} Height: {{ $scaled.Height }} {{ $scaled.RelPermalink }}</p>
 <img src="{{ $scaled.Permalink }}">
 
