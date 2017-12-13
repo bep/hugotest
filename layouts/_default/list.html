@@ -2,6 +2,10 @@
 <h1>{{ .Title }}</h1>
 <div class="list-group">
 {{ range .Paginator.Pages }}
+{{ range first 2 (.Resources.ByType "image") }}
+{{ $scaled := .Fit "210x210" }}
+<img src="{{ $scaled.Permalink }}">
+{{ end }}
 <a href="{{ .RelPermalink }}" class="list-group-item">{{ .Title }}</a>
 {{ end }}
 </div>
