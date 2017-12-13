@@ -4,9 +4,19 @@
 <h2>Resources:</h2>
 <ul>
 {{ range .Resources }}
-<li>{{ .ResourceType }}: {{ .RelPermalink }} / {{ .Permalink }}</li>
+{{ if .RelPermalink }}
+<li><a href="{{ .RelPermalink }}">{{ .ResourceType | title }}</a></li>
+{{ else }}
+<li>{{ .ResourceType | title }} (no link, only embedded in page)</li>
+{{ end }}
 {{ end }}
 </ul>
+
+<h2>Get a specific resource: (.Resources.GetByPrefix "colors")</h2>
+{{ $colors := .Resources.GetByPrefix "colors" }}
+{{ with $colors }}
+<a href="{{ .RelPermalink }}">{{ .ResourceType | title }}</a></li>
+{{ end }}
 
 
 <h2>Images:</h2>
@@ -42,6 +52,8 @@
 {{ .Content }}
 {{ end }}
 {{ end }}
+
+
 
 
 <h2>Main Content</h2>
