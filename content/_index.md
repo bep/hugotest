@@ -4,8 +4,4 @@ title = "Hugo Test Site"
 
 +++
 
-> Source for this test site: https://github.com/bep/hugotest
-
-### Content Directory
-
-{{< tree >}}
+## Section 3
