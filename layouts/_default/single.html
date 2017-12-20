@@ -21,7 +21,7 @@
 {{ with .Resources.ByType "image" }}
 {{ range . }}
 <h3>.Fill "90x120 bottomLeft" => </h3>
-{{ $scaled := .Fill "90x120  bottomLeft" }}
+{{ $scaled := .Fill "90x120  bottomLeft box" }}
 <p>Width: {{ $scaled.Width }} Height: {{ $scaled.Height }} {{ $scaled.RelPermalink }}</p>
 <img src="{{ $scaled.Permalink }}">
 <h3>.Fill "120x120 bottomLeft r45" (rotate counter-clockwise ) => </h3>
