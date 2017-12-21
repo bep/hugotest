@@ -6,6 +6,5 @@ go install || die "Hugo build failed!"
 
 popd
 
-
-hugo version && echo "--------------------------------------------------" &&  hugo server --disableFastRender
+hugo server --disableFastRender
 
