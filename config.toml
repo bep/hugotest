@@ -15,7 +15,7 @@ pygmentsuseclasses = false
 resampleFilter = "NearestNeighbor"
 
 # Defatult JPEG quality setting. Default is 75.
-quality = 67
+quality = 61
 
 [permalinks]
   section3 = "/:sections/:year/:month/:slug/"

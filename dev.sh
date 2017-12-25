@@ -6,5 +6,5 @@ go install || die "Hugo build failed!"
 
 popd
 
-hugo server --disableFastRender
+hugo server --disableFastRender --navigateToChanged
 
