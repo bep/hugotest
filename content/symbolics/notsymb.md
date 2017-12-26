@@ -5,5 +5,5 @@ title = "Not symbolic"
 +++
 
 ## Not
-foo!s
-foo
+snots
+not

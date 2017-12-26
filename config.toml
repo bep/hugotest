@@ -12,10 +12,10 @@ pygmentsuseclasses = false
 # Default resample filter used for resizing. Default is Box,
 # a simple and fast averaging filter appropriate for downscaling.
 # See https://github.com/disintegration/imaging
-resampleFilter = "NearestNeighbor"
+resampleFilter = "box"
 
 # Defatult JPEG quality setting. Default is 75.
-quality = 61
+quality = 68
 
 [permalinks]
   section3 = "/:sections/:year/:month/:slug/"

@@ -4,7 +4,7 @@ title = "Hugo Test Site"
 
 +++
 
-## Section 3
+## Home page
 
 
-s
+Home page content.
