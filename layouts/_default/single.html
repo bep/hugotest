@@ -1,4 +1,60 @@
 {{ define "main" }}
-<h1>{{ .Title }}</h1>
+<h1>{{ .Title }} Path: {{ .Path }}</h1>
+<h2>Main Content</h2>
 {{ .Content }}
+<h2>Resources:</h2>
+<ul>
+	{{ range .Resources }}
+	{{ if .RelPermalink }}
+	<li><a href="{{ .RelPermalink }}">{{ .ResourceType | title }}</a></li>
+	{{ else }}
+	<li>{{ .ResourceType | title }} (no link, only embedded in page)</li>
+	{{ end }}
+	{{ end }}
+</ul>
+<h2>Get a specific resource: (.Resources.GetByPrefix "colors")</h2>
+{{ $colors := .Resources.GetByPrefix "colors" }}
+{{ with $colors }}
+<a href="{{ .RelPermalink }}">{{ .ResourceType | title }}</a></li>
+{{ end }}
+<h2>Images:</h2>
+{{ with .Resources.ByType "image" }}
+{{ range . }}
+<h3>.Fill "90x120 bottomLeft" => </h3>
+{{ $scaled := .Fill "90x120  bottomLeft box" }}
+<p>Width: {{ $scaled.Width }} Height: {{ $scaled.Height }} {{ $scaled.RelPermalink }}</p>
+<img src="{{ $scaled.Permalink }}">
+<h3>.Fill "120x120 bottomLeft r45" (rotate counter-clockwise ) => </h3>
+{{ $scaled := .Fill "120x120  bottomLeft r45" }}
+<p>Width: {{ $scaled.Width }} Height: {{ $scaled.Height }} {{ $scaled.RelPermalink }}</p>
+<img src="{{ $scaled.Permalink }}">
+<h3>.Fit "210x210" => </h3>
+{{ $scaled := .Fit "210x210" }}
+<p>Width: {{ $scaled.Width }} Height: {{ $scaled.Height }} {{ $scaled.RelPermalink }}</p>
+<img src="{{ $scaled.Permalink }}">
+<h3>.Resize "400x 10 q10" (very low JPEG quality, default=75)=> </h3>
+{{ $scaled := .Resize "400x q10" }}
+<p>Width: {{ $scaled.Width }} Height: {{ $scaled.Height }} {{ $scaled.RelPermalink }}</p>
+<img src="{{ $scaled.Permalink }}">
+<h3>.Resize "400x q100" (very high JPEG quality)=> </h3>
+{{ $scaled := .Resize "400x q100" }}
+<p>Width: {{ $scaled.Width }} Height: {{ $scaled.Height }} {{ $scaled.RelPermalink }}</p>
+<img src="{{ $scaled.Permalink }}">
+<h3>.Resize "400x100" => </h3>
+{{ $scaled := .Resize "400x100" }}
+<p>Width: {{ $scaled.Width }} Height: {{ $scaled.Height }} {{ $scaled.RelPermalink }}</p>
+<img src="{{ $scaled.Permalink }}">
+<h3>.Resize "200x100 r90" (rotated 90 deegrees counter-clockwise) => </h3>
+{{ $scaled := .Resize "200x100 r90" }}
+<p>Width: {{ $scaled.Width }} Height: {{ $scaled.Height }} {{ $scaled.RelPermalink }}</p>
+<img src="{{ $scaled.Permalink }}">
+{{ end }}
+{{ end }}
+<h2>Sub Pages:</h2>
+{{ with .Resources.ByType "page" }}
+{{ range . }}
+<h3>{{ .Title }}</h3>
+{{ .Content }}
+{{ end }}
+{{ end }}
 {{ end }}
