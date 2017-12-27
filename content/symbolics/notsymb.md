@@ -4,6 +4,4 @@ title = "Not symbolic"
 
 +++
 
-## Not
-snots
-not
+### Not Symbolic

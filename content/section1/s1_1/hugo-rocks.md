@@ -4,5 +4,5 @@ title = "Hugo Rocks!"
 
 +++
 
-## Hugo Rocks!!
+## Hugo Rocks!
 

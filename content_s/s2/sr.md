@@ -4,10 +4,4 @@ title = "Symbolic S2!"
 
 +++
 
-Some content.
-sssssssssssssssfoo
-foo
-foo
-foo
-dupe
-dupe
+Some content!

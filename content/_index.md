@@ -7,4 +7,4 @@ title = "Hugo Test Site"
 ## Home page
 
 
-Home page content.
+Home page content!

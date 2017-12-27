@@ -4,10 +4,5 @@ title = "Symbolic S1!"
 
 +++
 
-Some content.
+Some content!
 
-changed
-changed
-changed
-cs
-cs

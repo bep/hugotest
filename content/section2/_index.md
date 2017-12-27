@@ -5,5 +5,3 @@ title = "Section #2"
 +++
 
 Branch 2
-
-s
