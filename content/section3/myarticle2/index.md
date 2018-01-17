@@ -5,4 +5,4 @@ title = "My Article 2"
 +++
 
 
-This is the content file for the bundle!!
+This is the content file for the bundle!s

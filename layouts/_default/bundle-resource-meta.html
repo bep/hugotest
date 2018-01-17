@@ -1,0 +1,17 @@
+{{ define "main" }}
+<h1>Resources with metadata in front matter</h1>
+{{ highlight (readFile (printf "content/%s" .Path)) "bash" ""  }}
+{{ range .Resources.ByType "image" }}
+{{ $scaled := .Resize "200x" }}
+<h3>{{ $scaled.Title }}</h3>
+<img src="{{ $scaled.RelPermalink }}" alt="{{ $scaled.Title }}">
+<h4>Metadata</h4>
+<ul>
+	<li>Title: {{ $scaled.Title }}</li>
+	<li>Name: {{ $scaled.Name }}</li>
+	{{ range $k, $v := $scaled.Params}}
+	<li>{{ $k | title }}: {{ $v }}</li>
+	{{ end }}
+</ul>
+{{ end }}
+{{ end }}
