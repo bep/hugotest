@@ -1,7 +1,7 @@
 {{ define "main" }}
 <h1>{{ .Title }}</h1>
 
-{{ $logo := (.Resources.GetByPrefix "logo") }}
+{{ $logo := (.Resources.GetMatch "logo*") }}
 
 {{ with $logo }}
 {{ $resized := $logo.Resize "300x" }}

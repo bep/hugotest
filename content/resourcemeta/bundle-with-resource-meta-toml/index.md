@@ -5,7 +5,7 @@ layout = "bundle-resource-meta"
 
 [[resources]]
 # The order matters
-src = "*/image-4.png"
+src = "**image-4.png"
 title = "TOML: The Fourth Image"
 [[resources]]
 src = "*.png"
