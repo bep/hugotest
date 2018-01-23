@@ -7,6 +7,8 @@ layout = "bundle-resource-meta"
 # The order matters
 src = "**image-4.png"
 title = "TOML: The Fourth Image"
+[resources.params]
+byline = "picasso"
 [[resources]]
 src = "*.png"
 name = "my-cool-image-:counter"
