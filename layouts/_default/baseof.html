@@ -5,7 +5,11 @@
 		<title>Hugo Test Site</title>
 		<meta name="description" content="Hugo Test Site">
 		<meta name="author" content="bep">
-		<link rel="stylesheet" href="{{ "bootstrap.min.css" | relURL }}">
+		 {{- template "_internal/opengraph.html" . -}}
+      {{- template "_internal/google_news.html" . -}}
+      {{- template "_internal/schema.html" . -}}
+         {{- template "_internal/twitter_cards.html" . -}}
+   	<link rel="stylesheet" href="{{ "bootstrap.min.css" | relURL }}">
 		<link rel="stylesheet" href="{{ "styles.css" | relURL }}">
 	</head>
 	<body>
