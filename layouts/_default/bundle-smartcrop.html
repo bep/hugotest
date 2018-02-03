@@ -1,0 +1,26 @@
+{{ define "main" }}
+<h1>Smartcrop Examples</h1>
+{{ range .Resources.ByType "image" }}
+{{ $orig := .Resize "500x" }}
+{{ $cropped := $orig.Fill "200x200 smart" }}
+<h3>{{ $cropped.Title }} (.Fill "200x200 smart")</h3>
+<table>
+<tr>
+<td>
+<img src="{{ $orig.RelPermalink }}" alt="{{ $orig.Title }}">
+</td>
+<td>&nbsp;&nbsp;
+<img src="{{ $cropped.RelPermalink }}" alt="{{ $cropped.Title }}">
+</td>
+</tr>
+</table>
+<h4>Metadata</h4>
+<ul>
+	<li>Title: {{ $cropped.Title }}</li>
+	<li>Name: {{ $cropped.Name }}</li>
+	{{ range $k, $v := $cropped.Params}}
+	<li>{{ $k | title }}: {{ $v | markdownify }}</li>
+	{{ end }}
+</ul>
+{{ end }}
+{{ end }}
