@@ -20,6 +20,10 @@
 <h2>Images:</h2>
 {{ with .Resources.ByType "image" }}
 {{ range . }}
+<h3>.Fill "100x100 smart" => </h3>
+{{ $scaled := .Fill "100x100  smart" }}
+<p>Width: {{ $scaled.Width }} Height: {{ $scaled.Height }} {{ $scaled.RelPermalink }}</p>
+<img src="{{ $scaled.Permalink }}">
 <h3>.Fill "90x120 bottomLeft" => </h3>
 {{ $scaled := .Fill "90x120  bottomLeft box" }}
 <p>Width: {{ $scaled.Width }} Height: {{ $scaled.Height }} {{ $scaled.RelPermalink }}</p>
