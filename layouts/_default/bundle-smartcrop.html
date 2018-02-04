@@ -1,5 +1,5 @@
 {{ define "main" }}
-<h1>Smartcrop Examples</h1>
+<h1>Smartcrop Examples 200X200</h1>
 {{ range .Resources.ByType "image" }}
 {{  $.Scratch.Set "manual" nil }}
 {{ $orig := .Resize "500x" }}
@@ -41,4 +41,50 @@
 	{{ end }}
 </ul>
 {{ end }}
+
+
+<h1>Smartcrop Examples 300X200</h1>
+{{ range .Resources.ByType "image" }}
+{{  $.Scratch.Set "manual" nil }}
+{{ $orig := .Resize "500x" }}
+{{ $cropped := $orig.Fill "400x200 smart" }}
+{{ $cropped2 := $orig.Fill "400x200 smart2" }}
+{{ with .Params.anchor }}
+	{{  $.Scratch.Set "manual" ($orig.Fill (printf "400x200 %s" .)) }}
+{{ end }}
+<h3>{{ $cropped.Title }} (.Fill "300x200 smart")</h3>
+<table class="table">
+	<thead>
+<tr>
+<th>Original</th><th>Smart #1</th><th>Smart #2</th><th>Manual {{ with .Params.anchor }}({{ . }}){{ end }}</th>
+</tr>
+</thead>
+<tr>
+<td>
+<img src="{{ $orig.RelPermalink }}" alt="{{ $orig.Title }}">
+</td>
+<td>&nbsp;&nbsp;
+<img src="{{ $cropped.RelPermalink }}" alt="{{ $cropped.Title }}">
+</td>
+<td>&nbsp;&nbsp;
+<img src="{{ $cropped2.RelPermalink }}" alt="{{ $cropped2.Title }}">
+</td>
+<td>&nbsp;&nbsp;
+{{ with $.Scratch.Get "manual" }}
+<img src="{{ .RelPermalink }}" alt="{{ .Title }}">
+{{ end }}
+</td>
+</tr>
+</table>
+<h4>Metadata</h4>
+<ul>
+	<li>Title: {{ $cropped.Title }}</li>
+	<li>Name: {{ $cropped.Name }}</li>
+	{{ range $k, $v := $cropped.Params}}
+	<li>{{ $k | title }}: {{ $v | markdownify }}</li>
+	{{ end }}
+</ul>
+{{ end }}
+
+
 {{ end }}

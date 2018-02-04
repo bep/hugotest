@@ -18,12 +18,17 @@ source = "https://www.flickr.com/photos/endogamia/5682480447 by N. Feans"
 [[resources]]
 src = "bendtner.jpg"
 [resources.params]
-anchor = "center"
+anchor = "top"
 
 [[resources]]
 src = "church2.jpg"
 [resources.params]
-anchor = "left"
+anchor = "topLeft"
+
+[[resources]]
+src = "church.jpg"
+[resources.params]
+anchor = "topLeft"
 
 [[resources]]
 src = "sogndal.jpg"
@@ -33,19 +38,19 @@ anchor = "right"
 [[resources]]
 src = "statue.jpg"
 [resources.params]
-anchor = "left"
+anchor = "topLeft"
 
 
 [[resources]]
 src = "undredal.jpg"
 [resources.params]
-anchor = "right"
+anchor = "bottomRight"
 
 
 [[resources]]
 src = "wall.jpg"
 [resources.params]
-anchor = "left"
+anchor = "topLeft"
 
 
 [[resources]]
@@ -57,12 +62,38 @@ anchor = "bottom"
 [[resources]]
 src = "sealion.jpg"
 [resources.params]
-anchor = "left"
+anchor = "bottomLeft"
 
 [[resources]]
 src = "tram.jpg"
 [resources.params]
 anchor = "bottom"
+
+[[resources]]
+src = "bigben.jpg"
+[resources.params]
+anchor = "topLeft"
+
+
+[[resources]]
+src = "oldman.jpg"
+[resources.params]
+anchor = "left"
+
+[[resources]]
+src = "opera.jpg"
+[resources.params]
+anchor = "topRight"
+
+[[resources]]
+src = "staffan.jpg"
+[resources.params]
+anchor = "center"
+
+[[resources]]
+src = "sunset.jpg"
+[resources.params]
+anchor = "top"
 
 +++
 
