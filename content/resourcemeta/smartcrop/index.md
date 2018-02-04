@@ -53,5 +53,16 @@ src = "gaspump.jpg"
 [resources.params]
 anchor = "bottom"
 
+
+[[resources]]
+src = "sealion.jpg"
+[resources.params]
+anchor = "left"
+
+[[resources]]
+src = "tram.jpg"
+[resources.params]
+anchor = "bottom"
+
 +++
 
