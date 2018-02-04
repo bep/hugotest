@@ -1,16 +1,34 @@
 {{ define "main" }}
 <h1>Smartcrop Examples</h1>
 {{ range .Resources.ByType "image" }}
+{{  $.Scratch.Set "manual" nil }}
 {{ $orig := .Resize "500x" }}
 {{ $cropped := $orig.Fill "200x200 smart" }}
+{{ $cropped2 := $orig.Fill "200x200 smart2" }}
+{{ with .Params.anchor }}
+	{{  $.Scratch.Set "manual" ($orig.Fill (printf "200x200 %s" .)) }}
+{{ end }}
 <h3>{{ $cropped.Title }} (.Fill "200x200 smart")</h3>
-<table>
+<table class="table">
+	<thead>
+<tr>
+<th>Original</th><th>Smart #1</th><th>Smart #2</th><th>Manual {{ with .Params.anchor }}({{ . }}){{ end }}</th>
+</tr>
+</thead>
 <tr>
 <td>
 <img src="{{ $orig.RelPermalink }}" alt="{{ $orig.Title }}">
 </td>
 <td>&nbsp;&nbsp;
 <img src="{{ $cropped.RelPermalink }}" alt="{{ $cropped.Title }}">
+</td>
+<td>&nbsp;&nbsp;
+<img src="{{ $cropped2.RelPermalink }}" alt="{{ $cropped2.Title }}">
+</td>
+<td>&nbsp;&nbsp;
+{{ with $.Scratch.Get "manual" }}
+<img src="{{ .RelPermalink }}" alt="{{ .Title }}">
+{{ end }}
 </td>
 </tr>
 </table>
