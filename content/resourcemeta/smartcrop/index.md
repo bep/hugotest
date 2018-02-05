@@ -4,7 +4,7 @@ title = "Smartcropping of images"
 layout = "bundle-smartcrop"
 
 [[resources]]
-src = "gopher.jpg"
+src = "*gopher.jpg"
 title = "Gopher"
 [resources.params]
 source = "https://www.flickr.com/photos/usfwspacific/8182486789 CC BY U.S. Fish & Wildlife"
@@ -74,9 +74,8 @@ src = "bigben.jpg"
 [resources.params]
 anchor = "topLeft"
 
-
 [[resources]]
-src = "oldman.jpg"
+src = "*oldman.jpg"
 [resources.params]
 anchor = "left"
 
@@ -94,6 +93,49 @@ anchor = "center"
 src = "sunset.jpg"
 [resources.params]
 anchor = "top"
+
+[[resources]]
+src = "*jenny.jpg"
+[resources.params]
+anchor = "right"
+
+
+[[resources]]
+src = "*archer.jpg"
+[resources.params]
+anchor = "left"
+
+[[resources]]
+src = "*statue.jpg"
+[resources.params]
+anchor = "right"
+
+
+
+[[resources]]
+src = "beer.jpg"
+[resources.params]
+anchor = "left"
+
+[[resources]]
+src = "cannon.jpg"
+[resources.params]
+anchor = "left"
+
+[[resources]]
+src = "castle.jpg"
+[resources.params]
+anchor = "top"
+
+[[resources]]
+src = "checkpoint.jpg"
+[resources.params]
+anchor = "right"
+
+[[resources]]
+src = "dave.jpg"
+[resources.params]
+anchor = "right"
 
 +++
 
