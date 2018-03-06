@@ -1,3 +1,3 @@
 rm -rf public/
-hugo
+hugo --gc
 s3deploy -source=public/ -region=eu-west-1 -bucket=hugotest.bep.is
