@@ -1,0 +1,6 @@
+{{ $logo := (.Resources.GetMatch "logo*") }}
+
+{{ with $logo }}
+{{ $resized := $logo.Resize "300x" }}
+<img src="{{ $resized.Permalink }}" width="{{ $resized.Width }}" height="{{ $resized.Height }}">
+{{ end }}

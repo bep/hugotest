@@ -1,5 +1,6 @@
 {{ define "main" }}
 <h1>{{ .Title }}</h1>
+{{ partial "logo" . }}
 <div class="list-group">
 {{ range .Paginator.Pages }}
 {{ range first 2 (.Resources.ByType "image") }}

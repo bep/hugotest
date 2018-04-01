@@ -1,13 +1,6 @@
 {{ define "main" }}
 <h1>{{ .Title }}</h1>
-
-{{ $logo := (.Resources.GetMatch "logo*") }}
-
-{{ with $logo }}
-{{ $resized := $logo.Resize "300x" }}
-<img src="{{ $resized.Permalink }}" width="{{ $resized.Width }}" height="{{ $resized.Height }}">
-{{ end }}
-
+{{ partial "logo" . }}
 <div class="list-group">
 {{ range (.Paginate (where .Site.RegularPages "Section" "in" ( .Site.Params.mainSections ))).Pages }}
 <a href="{{ .RelPermalink }}" class="list-group-item">{{ .Title }}</a>

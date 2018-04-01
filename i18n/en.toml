@@ -1,0 +1,6 @@
+[translations]
+one ="Translation"
+other = "Translations"
+
+[wordCount]
+other = "{{ .WordCount }} words"

@@ -21,3 +21,16 @@ anchor = "smart"
 
 [permalinks]
   section3 = "/:sections/:year/:month/:slug/"
+
+[languages]
+
+[languages.en]
+languageName = "English"
+weight = 1
+title = "Hugo Test in English"
+
+[languages.nn]
+languageName = "Nynorsk"
+weight = 2
+title = "Hugo Test på norsk"
+contentDir = "content_nn"

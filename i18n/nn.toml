@@ -1,0 +1,6 @@
+[translations]
+one =  "Omsetjing"
+other ="Omsetjingar"
+
+[wordCount]
+other = "{{ .WordCount }} ord"

@@ -1,6 +1,7 @@
 {{ define "main" }}
-<h1>Resources with metadata in front matter</h1>
-{{ highlight (readFile (printf "content/%s" .Path)) "bash" ""  }}
+<h1>{{ .Title }}</h1>
+{{ .Content }}
+{{ highlight (readFile .Filename) "bash" ""  }}
 {{ range .Resources.ByType "image" }}
 {{ $scaled := .Resize "200x" }}
 <h3>{{ $scaled.Title }}</h3>
