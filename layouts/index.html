@@ -1,5 +1,6 @@
 {{ define "main" }}
 <h1>{{ .Title }}</h1>
+<h2><a href="https://github.com/bep/hugotest">Source: github.com/bep/hugotest</a></h2>
 {{ partial "logo" . }}
 <div class="list-group">
 {{ range (.Paginate (where .Site.RegularPages "Section" "in" ( .Site.Params.mainSections ))).Pages }}
