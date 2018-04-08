@@ -1,15 +1,22 @@
 {{ define "main" }}
 <h1>{{ .Title }}</h1>
 {{ partial "logo" . }}
+<h3>List Page's First 2 Images</h3>
+ {{ template "first2-images" . }}
 <div class="list-group">
 {{ range .Paginator.Pages }}
+	<h3>Child Page's First 2 Images</h3>
+  {{ template "first2-images" . }}
+{{ end }}
+</div>
+<h3>Content</h3>
+{{ .Content }}
+{{ end }}
+
+{{ define "first2-images" }}
 {{ range first 2 (.Resources.ByType "image") }}
 {{ $scaled := .Fit "210x210" }}
 <img src="{{ $scaled.Permalink }}">
 {{ end }}
 <a href="{{ .RelPermalink }}" class="list-group-item">{{ .Title }}</a>
-{{ end }}
-</div>
-<h3>Content</h3>
-{{ .Content }}
 {{ end }}
