@@ -61,4 +61,12 @@
 {{ .Content }}
 {{ end }}
 {{ end }}
+
+<h2>JSON Resources:</h2>
+{{ with .Resources.ByType "json" }}
+{{ range . }}
+<h3>{{ .Title }}</h3>
+{{ highlight .Content "json" "" }}
+{{ end }}
+{{ end }}
 {{ end }}
