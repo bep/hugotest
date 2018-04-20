@@ -1,0 +1,10 @@
+{{ define "main"}}
+<h1>Content</h1>
+{{ .Content }}
+
+{{ range .Resources.ByType "page" }}
+<h2>Bundled Resource</h2>
+<h3>{{ .Title }}</h3>
+{{ .Content }}
+{{ end }}
+{{ end }}

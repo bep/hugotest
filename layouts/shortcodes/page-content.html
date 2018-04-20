@@ -1,0 +1,10 @@
+{{ $kind := .Get 0 }}
+{{ $path := .Get 1 }}
+{{ with .Page.Site.GetPage $kind $path }}
+<h3>Page in shortcode</h3>
+<ul>
+<li>Title: {{ .Title }}</li>
+<li>Content: {{ .Content }}</li>
+<li>Summary: {{ .Summary }}</li>
+</ul>
+{{ end }}
