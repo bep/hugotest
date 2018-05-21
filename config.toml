@@ -7,6 +7,9 @@ pygmentscodefencesguesssyntax = false
 pygmentsstyle = "trac"
 pygmentsuseclasses = false
 
+# TODO(bep)
+googleAnalytics = "AB-CD"
+
 
 [imaging]
 # Default resample filter used for resizing. Default is Box,
@@ -21,6 +24,25 @@ anchor = "smart"
 
 [permalinks]
   section3 = "/:sections/:year/:month/:slug/"
+
+[privacy]
+[privacy.disqus]
+disable = true
+[privacy.googleAnalytics]
+disable = false
+respectDoNotTrack = true
+[privacy.instagram]
+disable = true
+[privacy.speakerDeck]
+disable = true
+[privacy.tweet]
+disable = true
+[privacy.vimeo]
+disable = true
+[privacy.youtube]
+disable = false
+privacyEnhanced = true
+simple = true
 
 [languages]
 

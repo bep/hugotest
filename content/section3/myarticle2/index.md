@@ -5,6 +5,8 @@ title = "My Article 2"
 +++
 
 
-This is the content file for the bundle!s
+This is the content file for the bundle!!
+
+{{< youtube uDs5GZe-h64 >}}
 
 {{< bundle-inspect >}}
