@@ -1,12 +1,6 @@
-body { padding-top: 50px }
-body>.navbar { -webkit-transition: background-color .3s ease-in; transition: background-color .3s ease-in }
-@media (min-width:768px) {
-	body>.navbar-transparent { background-color: transparent }
-	body>.navbar-transparent .navbar-nav>.open>a { background-color: transparent !important }
-}
-#home { padding-top: 0 }
-#home .navbar-brand { padding: 13.5px 15px 12.5px }
-#home .navbar-brand>img { display: inline; margin: 0 10px; height: 100% }
+body { padding-top: 120px }
+h2, h3, h4 { margin: 0.75em 0px 0.75em 0px; }
+.list-group { margin: 3em 0px 2em 0px; }
 #banner { min-height: 300px; border-bottom: none }
 .table-of-contents { margin-top: 1em }
 .page-header h1 { font-size: 4em }
@@ -74,6 +68,7 @@ footer p { clear: left; margin-bottom: 0 }
 .css-treeview a {  text-decoration: none; }
 .css-treeview a:hover { text-decoration: underline; }
 .css-treeview input + label + ul { margin: 0 0 0 22px; }
+.css-treeview label { margin: 12px 0 0 0; }
 .css-treeview input ~ ul { display: none; }
 .css-treeview label, .css-treeview label::before { cursor: pointer; }
 .css-treeview input:disabled + label { cursor: default; opacity: .6; }

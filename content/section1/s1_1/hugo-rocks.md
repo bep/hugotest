@@ -4,6 +4,19 @@ title = "Hugo Rocks!"
 
 +++
 
-## Hugo Rocks!
+## Insta Simple
 
-{{< youtube AeHHcZA4U14 >}}
+{{< instagram_simple BhbuHhtAc0t hidecaption >}}
+
+## Insta Regular
+
+{{< instagram BhbuHhtAc0t hidecaption >}}
+
+## Hugo Rocks!!!s!
+
+{{< youtube uDs5GZe-h64 >}}
+
+
+## 2
+
+{{< youtube uDs5GZe-h64 >}}

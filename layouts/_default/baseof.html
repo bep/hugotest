@@ -5,23 +5,20 @@
 		<title>Hugo Test Site</title>
 		<meta name="description" content="Hugo Test Site">
 		<meta name="author" content="bep">
-	
-{{ template "_internal/google_analytics.html" . }}
-   	<link rel="stylesheet" href="{{ "bootstrap.min.css" | relURL }}">
+		
+		{{ template "_internal/google_analytics.html" . }}
+		<link rel="stylesheet" href="{{ "bootstrap.min.css" | relURL }}">
 		<link rel="stylesheet" href="{{ "styles.css" | relURL }}">
 	</head>
 	<body>
 		<div class="container">
-			<div class="navbar navbar-default navbar-fixed-top">
+			<div class="navbar navbar-expand-lg fixed-top navbar-dark bg-primary">
 				<div class="container">
-					<div class="navbar-header">
-						<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						</button>
-					</div>
-					<div class="navbar-collapse collapse" id="navbar-main">{{ partial "breadcrumb.html" . }}</div>
+					<a href="/" class="navbar-brand">Hugo Test</a>
+					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+					</button>
+					 <div class="collapse navbar-collapse" id="navbarResponsive">{{ partial "breadcrumb.html" . }}</div>
 				</div>
 			</div>
 			<div class="box">

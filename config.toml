@@ -32,7 +32,7 @@ disable = true
 disable = false
 respectDoNotTrack = true
 [privacy.instagram]
-disable = true
+disable = false
 [privacy.speakerDeck]
 disable = true
 [privacy.tweet]

@@ -1,0 +1,27 @@
+{{- $pc := .Page.Site.Config.Privacy.Instagram -}}
+{{- if not $pc.Disable -}}
+{{- $id := .Get 0 -}}
+{{- $item := getJSON "https://api.instagram.com/oembed/?url=https://www.instagram.com/p/" $id "/&amp;maxwidth=640&amp;omitscript=true" -}}
+{{- $class1 := "__h_instagram" -}}
+{{- $class2 := "s_instagram_simple" -}}
+{{- $divID := printf "%s_%d" $class2 (add $.Ordinal 1) -}}
+{{- $hideCaption := (eq (.Get 1) "hidecaption") -}}
+{{ with $item }}
+{{ $mediaURL := printf "https://instagram.com/p/%s/" $id | safeURL }}
+<style type="text/css">
+	.s_instagram_simple {
+		background-color: green;
+	}
+</style>
+<div class="{{ $class1 }} {{ $class2 }} card" id="{{ $divID }}" style="max-width: {{ add $item.thumbnail_width 18 }}px">
+	<div class="card-header">
+    <a href="{{ $item.author_url | safeURL }}" class="card-link">{{ $item.author_name }}</a>
+  </div>
+	<a href="{{ $mediaURL }}" target="_blank"><img class="card-img-top" src="{{ $item.thumbnail_url }}" width="{{ $item.thumbnail_width }}"  height="{{ $item.thumbnail_height }}" alt="Card image cap"></a>
+	<div class="card-body">
+		{{ if not $hideCaption }}<p class="card-text"><a href="{{ $item.author_url | safeURL }}" class="card-link">{{ $item.author_name }}</a> {{ $item.title}}</p>{{ end }}
+		<a href="{{ $item.author_url | safeURL }}" class="card-link">Vew More on Instagram</a>
+	</div>
+</div>
+{{ end }}
+{{- end -}}

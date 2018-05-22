@@ -1,13 +1,13 @@
-<ol  class="nav navbar-nav">
+<ul  class="navbar-nav">
   {{ template "breadcrumbnav" (dict "p1" . "p2" .) }}
-</ol>
+</ul>
 {{ define "breadcrumbnav" }}
 {{ if .p1.Parent }}
 {{ template "breadcrumbnav" (dict "p1" .p1.Parent "p2" .p2 )  }}
 {{ else if not .p1.IsHome }}
 {{ template "breadcrumbnav" (dict "p1" .p1.Site.Home "p2" .p2 )  }}
 {{ end }}
-<li{{ if eq .p1 .p2 }} class="active"{{ end }}>
-  <a href="{{ .p1.Permalink }}">{{ .p1.Title }}</a>
+<li class="navbar-item{{ if eq .p1 .p2 }} active{{ end }}">
+  <a class="nav-link" href="{{ .p1.Permalink }}">{{ .p1.Title }}</a>
 </li>
 {{ end }}
