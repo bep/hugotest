@@ -33,6 +33,7 @@ disable = false
 respectDoNotTrack = true
 [privacy.instagram]
 disable = false
+simple = false
 [privacy.speakerDeck]
 disable = true
 [privacy.tweet]
@@ -43,6 +44,10 @@ disable = true
 disable = false
 privacyEnhanced = true
 simple = true
+
+[services]
+[services.instagram]
+disableInlineCSS = false
 
 [languages]
 
