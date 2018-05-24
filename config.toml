@@ -36,8 +36,9 @@ disable = false
 simple = false
 [privacy.speakerDeck]
 disable = true
-[privacy.tweet]
-disable = true
+[privacy.twitter]
+disable = false
+enableDNT = true
 [privacy.vimeo]
 disable = true
 [privacy.youtube]
