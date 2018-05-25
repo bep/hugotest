@@ -31,12 +31,6 @@ Note that this may well be the simple version, depending on the privacy config.
 
 ## YouTube Regular
 
-Note that this may well be the simple version, depending on the privacy config.
-
 {{< youtube co8rCYWD_cc >}}
 
-
-## YouTube Simple
-
-{{< youtube_simple co8rCYWD_cc >}}
 

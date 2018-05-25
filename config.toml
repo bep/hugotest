@@ -7,9 +7,7 @@ pygmentscodefencesguesssyntax = false
 pygmentsstyle = "trac"
 pygmentsuseclasses = false
 
-# TODO(bep)
-googleAnalytics = "AB-CD"
-
+googleAnalytics = "UA-52478213-6"
 
 [imaging]
 # Default resample filter used for resizing. Default is Box,
@@ -31,6 +29,7 @@ disable = true
 [privacy.googleAnalytics]
 disable = false
 respectDoNotTrack = true
+anonymizeIP = true
 [privacy.instagram]
 disable = false
 simple = false
@@ -44,7 +43,6 @@ disable = true
 [privacy.youtube]
 disable = false
 privacyEnhanced = true
-simple = true
 
 [services]
 [services.instagram]
