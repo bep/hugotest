@@ -30,6 +30,7 @@ disable = true
 disable = false
 respectDoNotTrack = true
 anonymizeIP = true
+useSessionStorage = true
 [privacy.instagram]
 disable = false
 simple = false
