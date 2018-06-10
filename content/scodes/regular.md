@@ -2,6 +2,17 @@
 title: A regular file in the scodes section
 ---
 
+
+{{< mt1 >}}
+
+{{< mt1_2 >}}
+
+
+{{< mt2 >}}
+
+
+{{< mt3 >}}
+
 Content.
 
 {{< current-page >}}

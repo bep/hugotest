@@ -1,4 +1,9 @@
 baseURL = "http://hugotest.bep.is"
+
+# A theme consists of any number of components, with presedence from left (the project) to right. Also note that it is also possible for a
+# theme to define its own dependencies.
+theme = ["mt1", "mt2"]
+
 languageCode = "en-us"
 title = "Hugo Test Site"
 paginate = 4
@@ -19,6 +24,9 @@ resampleFilter = "Lanczos"
 quality = 75
 
 anchor = "smart"
+
+[params]
+p1 = "Params from project."
 
 [permalinks]
   section3 = "/:sections/:year/:month/:slug/"

@@ -1,0 +1,8 @@
+
+# So, a theme can also be themed, but note that this will currently not be supported by the Hugo theme site.
+# We will eventually get something ala `hugo get`, so we can use an URL scheme to import themes etc.
+# Currently, the name used below must match /yoursite/themes/mt3
+theme = ["mt3"]
+
+[params]
+mt2p = "Params from theme mt2."
