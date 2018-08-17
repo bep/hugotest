@@ -62,7 +62,7 @@ disableInlineCSS = false
 [languages.en]
 languageName = "English"
 weight = 1
-title = "Hugo Test in English"
+title = "Hugo Test"
 
 [languages.nn]
 languageName = "Nynorsk"

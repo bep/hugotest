@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<title>Hugo Test Site</title>
+		<title>{{ .Site.Title }}</title>
 		<meta name="description" content="Hugo Test Site">
 		<meta name="author" content="bep">	
 		{{ template "_internal/google_analytics.html" . }}
@@ -13,7 +13,7 @@
 		<div class="container">
 			<div class="navbar navbar-expand-lg fixed-top navbar-dark bg-primary">
 				<div class="container">
-					<a href="/" class="navbar-brand">Hugo Test</a>
+					<a href="{{ .Site.Home.RelPermalink }}" class="navbar-brand">{{ .Site.Title }}</a>
 					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 					</button>
