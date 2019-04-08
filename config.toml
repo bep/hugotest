@@ -11,6 +11,7 @@ pygmentscodefences = "true"
 pygmentscodefencesguesssyntax = false
 pygmentsstyle = "trac"
 pygmentsuseclasses = false
+enableInlineShortcodes = true
 
 googleAnalytics = "UA-52478213-6"
 
