@@ -1,0 +1,94 @@
+{{ define "main" }}
+
+{{ $images := resources.Match "images/trace/*.*p*" }}
+
+{{ $s := newScratch }}
+{{ range $images }}
+{{ $s.Set .Name . }}
+{{ end }}
+
+<h2>Image Trace: Custom Settings</h2>
+
+{{ $opts := dict "filter" "roberts" "low" 30 "high" 100 "turdSize" 2 "color" "orange" }}
+{{ template "trace" (dict "images" $s "name" "images/trace/bosch1.jpg" "settings" $opts)}}
+
+{{ $opts := dict "filter" "otsu" "low" 5 "high" 100 "turdSize" 28 "color" "orange" }}
+{{ template "trace" (dict "images" $s "name" "images/trace/picasso_signature.jpg" "settings" $opts)}}
+
+
+{{ $opts := dict "filter" "roberts" "color" "white" "low" 19 "high" 99 "turdSize" 50 }}
+{{ template "trace" (dict "images" $s "name" "images/trace/bigben.jpg" "settings" $opts)}}
+
+{{ $opts := dict "filter" "otsu" "color" "#8903ff" "low" 70 "high" 80 "turdSize" 5 }}
+{{ template "trace" (dict "images" $s "name" "images/trace/bird.png" "bg" "white"  "settings" $opts)}}
+
+{{ $opts := dict "low" 40 "high" 100 "turdSize" 50 "color" "lightblue" }}
+{{ template "trace" (dict "images" $s "name" "images/trace/b4.jpg" "settings" $opts)}}
+
+{{ $opts := dict "filter" "roberts" "low" 22 "high" 100 "turdSize" 50 "color" "lightblue" }}
+{{ template "trace" (dict "images" $s "name" "images/trace/b4.jpg" "settings" $opts)}}
+
+{{ $opts := dict "filter" "luma" "low" 47 "high" 70 "turdSize" 5 }}
+{{ template "trace" (dict "images" $s "name" "images/trace/c1.jpg"  "settings" $opts)}}
+
+{{ $opts := dict "filter" "roberts" "low" 19 "high" 80 "turdSize" 25 }}
+{{ template "trace" (dict "images" $s "name" "images/trace/c1.jpg"  "settings" $opts)}}
+
+{{ $opts := dict "filter" "roberts" "color" "orange" "low" 19 "high" 100 "turdSize" 50 }}
+{{ template "trace" (dict "images" $s "name" "images/trace/b1.jpg" "settings" $opts)}}
+
+{{ $opts := dict "filter" "luma" "color" "orange" "low" 40 "high" 100 "turdSize" 50 }}
+{{ template "trace" (dict "images" $s "name" "images/trace/b1.jpg" "settings" $opts)}}
+
+
+<h2 class="mt-5">Image Trace: Default Settings (trace half size)</h2>
+{{ range $i, $e := $images }}
+
+{{ $img := .Fit "400x300" }}
+{{ $imgS := .Fit "200x150" }}
+{{ $opts := dict "color" "white" "low" 100 "high" 38 "turdSize" 11 }}
+{{ $trace := $imgS.Trace }}
+
+<table>
+    <tr>
+        <th style="padding:30px; width: 300px; text-align: center;"></th>
+        <th style="width: 300px; text-align: center;"></th>
+    </tr>
+    <tr>
+        <td>
+            <img src="{{ $img.RelPermalink }}" width="{{ $img.Width }}" height="{{ $img.Height }}">
+            <br /><small>{{ $img.Name }} {{ div (len $img.Content) 1024 }} KB </small>
+        </td>
+        <td class="pl-5">
+            <img src="{{ $trace.RelPermalink }}" width="{{ $img.Width }}" height="{{ $img.Height }}"
+                style="background-color: rgb(24, 32, 32)">
+            <br /> {{ div (len $trace.Content)  1024  }} KB
+        </td>
+    </tr>
+</table>
+
+{{ end }}
+
+{{ end }}
+
+
+{{ define "trace" }}
+{{ $img := .images.Get .name }}
+{{ $img = $img.Fit "400x300" }}
+{{ $trace := $img.Trace .settings }}
+{{ $bg := .bg | default "rgb(24, 32, 32)" }}
+<table class="mt-5">
+    <td class="pr-5">
+        <img src="{{ $img.RelPermalink }}" width="{{ $img.Width }}" height="{{ $img.Height }}">
+        <br /> {{ div (len $img.Content)  1024  }} KB
+    </td>
+    <td>
+        {{ printf `<img src=%q width="%d" height="%d" style="background-color: %s">` $trace.RelPermalink $img.Width $img.Height $bg | safeHTML }}
+        <br /> {{ div (len $trace.Content)  1024  }} KB
+    </td>
+</table>
+
+<div class="alert alert-info w-50 mt-5 mb-6">{{ .name }}&nbsp&nbsp&nbsp{{ range $k, $v := .settings }}{{ $k }}: {{ $v}}&nbsp&nbsp&nbsp{{ end }}</div>
+<hr/>
+
+{{ end }}
