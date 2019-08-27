@@ -1,0 +1,20 @@
+{{ define "main" }}
+
+{{ $img := resources.Get "images/misc/sunset.jpg" }}
+{{ $exif := $img.Data.Exif }}
+{{ $img := $img.Resize "300x" }}
+
+
+<h2>Exif: {{ $exif.Values }}</h2>
+
+{{ $filters := slice images.Grayscale (images.GaussianBlur 1) }}
+
+{{ $b := $img.Filter $filters }}
+
+
+<img src="{{ $b.RelPermalink }}" />
+
+
+
+<div class="pb-5"></div>
+{{ end }}

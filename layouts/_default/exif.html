@@ -1,0 +1,14 @@
+{{ define "main" }}
+
+{{ $enabled := true }}
+
+
+{{ if $enabled }}
+{{ $images := resources.Match "images/many/*.jpg" }}
+Num images: 
+{{ len $images }}
+{{ range $images }}
+Exif Date: {{ .Exif.Values }}
+{{ end }}
+{{ end }}
+{{ end }}

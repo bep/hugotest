@@ -1,0 +1,6 @@
+---
+title: Exif
+layout: exif
+
+---
+
