@@ -1,7 +1,7 @@
 baseURL = "https://temp.bep.is/hugotest/"
 
 # A theme consists of any number of components, with presedence from left (the project) to right. Also note that it is also possible for a
-# theme to define its own dependencies.
+# theme to define its own dependencies..
 theme = ["mt1", "mt2"]
 
 languageCode = "en-us"
